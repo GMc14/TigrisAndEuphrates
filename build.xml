@@ -1,0 +1,19 @@
+<project name="tigris" default="jar" basedir=".">
+
+  <target name="init" description="Prepares the output directories">
+    <mkdir dir="build/"/>
+  </target>
+
+  <target name="build" depends="init" description="Compiles the source
+						   code">
+    <javac includeantruntime="false" srcdir="src/" includes="**/*.java"
+	   destdir="build/"/>
+  </target>
+
+  <target name="dist" depends="build" description="Builds a jar file
+    for attica">
+    <jar jarfile="dist/tigris.jar" manifest="src/tigris.manifest"
+    basedir="build/" />
+  </target>
+  
+</project>
